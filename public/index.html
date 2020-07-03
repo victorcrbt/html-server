@@ -1,201 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>B2Mult</title>
-    <link href="assets/styles/main-styles.css" rel="stylesheet" />
-  </head>
 
-  <body>
-    <div id="root">
-      <header id="main-header">
-        <div class="container">
-          <div class="logo-area">
-            <img
-              src="assets/images/logo.png"
-              alt="B2Mult Corretora de Seguros"
-              class="logo"
-            />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>B2Mult</title>
+<link href="assets/styles/main-styles.css" rel="stylesheet"></head>
+
+<body>
+  <div id="root">
+    <header id="main-header">
+      <div class="container">
+        <div class="logo-area">
+          <img src="assets/images/logo.png" alt="B2Mult Corretora de Seguros" class="logo">
+        </div>
+    
+        <nav class="navigation" id="navigation">
+          <div class="menu-icon" id="dropdown-button">
+            <div class="icon-line"></div>
+            <div class="icon-line"></div>
+            <div class="icon-line"></div>
           </div>
-
-          <nav class="navigation" id="navigation">
-            <div class="menu-icon" id="dropdown-button">
-              <div class="icon-line"></div>
-              <div class="icon-line"></div>
-              <div class="icon-line"></div>
+    
+          <ul class="menu" data-toggle="closed">
+            <li>
+              <a href="#">
+                Início
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Sobre a B2Mult
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Fale conosco
+    
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <aside>
+      <div class="carousel-container">
+        <div class="carousel-slide">
+          <a href="seguro_residencial" target="_blank" class="slide">
+            <img src="assets/images/house.jpg" alt="">
+            <div class="slide-caption">
+              <h1>Seguro residencial</h1>
             </div>
-
-            <ul class="menu" data-toggle="closed">
-              <li>
-                <a href="#">
-                  Início
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Sobre a B2Mult
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Fale conosco
-                </a>
-              </li>
-            </ul>
-          </nav>
+          </a>
+    
+          <a href="seguro_bike" target="_blank" class="slide">
+            <img src="assets/images/bike.jpg" alt="">
+            <div class="slide-caption">
+              <h1>Seguro bike</h1>
+            </div>
+          </a>
+    
+          <a href="seguro_automotivo" target="_blank" class="slide">
+            <img src="assets/images/car.jpg" alt="">
+            <div class="slide-caption">
+              <h1>Seguro automotivo</h1>
+            </div>
+          </a>
         </div>
-      </header>
-      <aside>
-        <div class="carousel-container">
-          <div class="carousel-slide">
-            <a href="seguro_residencial" target="_blank" class="slide">
-              <img src="assets/images/house.jpg" alt="" />
-              <div class="slide-caption">
-                <h1>Seguro residencial</h1>
-              </div>
-            </a>
-
-            <a href="seguro_bike" target="_blank" class="slide">
-              <img src="assets/images/bike.jpg" alt="" />
-              <div class="slide-caption">
-                <h1>Seguro bike</h1>
-              </div>
-            </a>
-
-            <a href="seguro_automotivo" target="_blank" class="slide">
-              <img src="assets/images/car.jpg" alt="" />
-              <div class="slide-caption">
-                <h1>Seguro automotivo</h1>
-              </div>
-            </a>
-          </div>
-
-          <div class="controls">
-            <button id="prevBtn">
-              <img src="assets/images/previous.svg" alt="" />
+    
+    
+        <div class="controls">
+          <button id="prevBtn">
+            <img src="assets/images/previous.svg" alt="">
+          </button>
+          <button id="nextBtn">
+            <img src="assets/images/next.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </aside>
+    <main id="products">
+      <div class="products-group">
+        <a href="seguro_automotivo" class="product">
+          <span class="product-name">
+            Seguro Auto
+          </span>
+          <img src="assets/images/car-insurance.svg" alt="" class="product-icon">
+        </a>
+        <a href="seguro_residencial" class="product">
+          <span class="product-name">
+            Seguro Residencial
+          </span>
+          <img src="assets/images/house-insurance.svg" alt="" class="product-icon">
+        </a>
+      </div>
+      <div class="products-group">
+        <a href="seguro_bike" class="product">
+          <span class="product-name">Seguro Bike</span>
+          <img src="assets/images/bike-insurance.svg" alt="" class="product-icon">
+        </a>
+        <a href="financiamento_automotivo" class="product">
+          <span class="product-name">
+            Financiamento Auto
+          </span>
+          <img src="assets/images/car-financing.svg" alt="" class="product-icon">
+        </a>
+      </div>
+    </main>
+    <!-- Ainda a ser definido o que será colocado nesta área. Por hora, somente conteúdo placeholder. -->
+    <section id="recommendation">
+      <div class="recommendation-container">
+        <div class="title">
+          <h1>Sua indicação vale desconto para o segurado ou dinheiro para você!</h1>
+        </div>
+    
+        <div class="recommendation-form">
+          <a href="/indicacao">
+            <button>
+              Indique
             </button>
-            <button id="nextBtn">
-              <img src="assets/images/next.svg" alt="" />
-            </button>
-          </div>
-        </div>
-      </aside>
-      <main id="products">
-        <div class="products-group">
-          <a href="seguro_automotivo" class="product">
-            <span class="product-name">
-              Seguro Auto
-            </span>
-            <img
-              src="assets/images/car-insurance.svg"
-              alt=""
-              class="product-icon"
-            />
-          </a>
-          <a href="seguro_residencial" class="product">
-            <span class="product-name">
-              Seguro Residencial
-            </span>
-            <img
-              src="assets/images/house-insurance.svg"
-              alt=""
-              class="product-icon"
-            />
           </a>
         </div>
-        <div class="products-group">
-          <a href="seguro_bike" class="product">
-            <span class="product-name">Seguro Bike</span>
-            <img
-              src="assets/images/bike-insurance.svg"
-              alt=""
-              class="product-icon"
-            />
-          </a>
-          <a href="financiamento_automotivo" class="product">
-            <span class="product-name">
-              Financiamento Auto
-            </span>
-            <img
-              src="assets/images/car-financing.svg"
-              alt=""
-              class="product-icon"
-            />
-          </a>
+      </div>
+    </section>
+    <section id="social-networks">
+      <a href="https://www.facebook.com/b2mult" target="_blank" class="social-network-icon">
+        <img src="assets/images/facebook-logo.svg" alt="">
+      </a>
+      <a href="https://www.linkedin.com/company/b2mult/" target="_blank" class="social-network-icon">
+        <img src="assets/images/linkedin-logo.svg" alt="">
+      </a>
+      <a href="" target="_blank" class="social-network-icon">
+        <img src="assets/images/whatsapp-logo.svg" alt="">
+      </a>
+      <a href="https://www.messenger.com/t/b2mult" target="_blank" class="social-network-icon">
+        <img src="assets/images/messenger-logo.svg" alt="">
+      </a>
+    </section>
+    <footer>
+      <div class="footer-container">
+        <div class="company-info">
+          <p class="corporate-name">
+            B2mult Corretora de Seguros LTDA
+          </p>
+          <p class="company-cnpj">
+            CNPJ 00.908.741/0001-75
+          </p>
+          <p class="company-document">
+            SUSEP - 10.2049251.0
+          </p>
         </div>
-      </main>
-      <!-- Ainda a ser definido o que será colocado nesta área. Por hora, somente conteúdo placeholder. -->
-      <section id="recommendation">
-        <div class="recommendation-container">
-          <div class="title">
-            <h1>
-              Sua indicação vale desconto para o segurado ou dinheiro para você!
-            </h1>
-          </div>
+    
+        <div class="footer-links">
+          <a href="#" class="footer-link">Sobre a B2Mult</a>
+          <a href="#" class="footer-link">Política de Privacidade</a>
+          <a href="#" class="footer-link">Fale conosco</a>
+        </div>
+      </div>
+    </footer>    <section id="copyright">
+      <p>© B2mult - 2019</p>
+    </section>  </div>
+<script type="text/javascript" src="assets/js/bundle.js"></script></body>
 
-          <div class="recommendation-form">
-            <a href="/indicacao">
-              <button>
-                Indique
-              </button>
-            </a>
-          </div>
-        </div>
-      </section>
-      <section id="social-networks">
-        <a
-          href="https://www.facebook.com/b2mult"
-          target="_blank"
-          class="social-network-icon"
-        >
-          <img src="assets/images/facebook-logo.svg" alt="" />
-        </a>
-        <a
-          href="https://www.linkedin.com/company/b2mult/"
-          target="_blank"
-          class="social-network-icon"
-        >
-          <img src="assets/images/linkedin-logo.svg" alt="" />
-        </a>
-        <a href="" target="_blank" class="social-network-icon">
-          <img src="assets/images/whatsapp-logo.svg" alt="" />
-        </a>
-        <a
-          href="https://www.messenger.com/t/b2mult"
-          target="_blank"
-          class="social-network-icon"
-        >
-          <img src="assets/images/messenger-logo.svg" alt="" />
-        </a>
-      </section>
-      <footer>
-        <div class="footer-container">
-          <div class="company-info">
-            <p class="corporate-name">
-              B2mult Corretora de Seguros LTDA
-            </p>
-            <p class="company-cnpj">
-              CNPJ 00.908.741/0001-75
-            </p>
-            <p class="company-document">
-              SUSEP - 10.2049251.0
-            </p>
-          </div>
-
-          <div class="footer-links">
-            <a href="#" class="footer-link">Sobre a B2Mult</a>
-            <a href="#" class="footer-link">Política de Privacidade</a>
-            <a href="#" class="footer-link">Fale conosco</a>
-          </div>
-        </div>
-      </footer>
-      <section id="copyright">
-        <p>© B2mult - 2019</p>
-      </section>
-    </div>
-    <script type="text/javascript" src="assets/js/bundle.js"></script>
-  </body>
 </html>
