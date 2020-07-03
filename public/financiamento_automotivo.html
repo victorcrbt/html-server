@@ -1,0 +1,113 @@
+<!doctype html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>B2Mult - Financiamento Automotivo</title>
+<link href="assets/styles/main-styles.css" rel="stylesheet"></head>
+
+<body>
+  <div id="root">
+    <div class="form-content">
+      <form id="car-financing-form" class="multistep-form">
+        <div class="fieldset-wrapper">
+          <!-- Pessoais -->
+          <fieldset>
+            <h1 class="section-title">Informações pessoais</h1>
+      
+            <label for="name">
+              <span class="label-title">Nome</span>
+              <input type="text" name="nome" id="name" autocomplete="off" autofocus="on">
+              <span class="error-message" data-fieldname="nome"></span>
+            </label>
+      
+            <label for="phone">
+              <span class="label-title">Telefone</span>
+              <input type="text" name="telefone" id="phone" autocomplete="off" data-mask-type="phone">
+              <span class="error-message" data-fieldname="telefone"></span>
+            </label>
+      
+            <label for="email">
+              <span class="label-title">E-mail</span>
+              <input type="email" name="email" id="email" autocomplete="off">
+              <span class="error-message" data-fieldname="email"></span>
+            </label>
+      
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <fieldset>
+            <label for="address">
+              <span class="label-title">Endereço</span>
+              <input type="text" name="endereco" id="address" autocomplete="off">
+              <span class="error-message" data-fieldname="endereco"></span>
+            </label>
+      
+            <label for="birth-date">
+              <span class="label-title">Data de nascimento</span>
+              <input type="date" name="data_nasc" id="birth-date" autocomplete="off" data-mask-type="date">
+              <span class="error-message" data-fieldname="data_nasc"></span>
+            </label>
+      
+            <label for="document">
+              <span class="label-title">CPF/CNPJ</span>
+              <input type="text" name="documento" id="document" autocomplete="off" data-mask-type="document">
+              <span class="error-message" data-fieldname="documento"></span>
+            </label>
+      
+      
+            <label for="notification-check">
+              <div class="inline-input">
+                <input type="checkbox" name="notification_mark" id="notification-check" value="true">
+                <span class="label-title">Receber ofertas e notificações?</span>
+              </div>
+            </label>
+      
+            <button type="button" class="prev-button">Anterior</button>
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <!-- Veículo -->
+          <fieldset>
+            <h1 class="section-title">Informações do veículo</h1>
+      
+            <label for="vehicle-brand">
+              <span class="label-title">Marca do veículo</span>
+              <select name="marca_veiculo" id="vehicle-brand">
+                <option></option>
+              </select>
+              <span class="error-message" data-fieldname="marca_veiculo"></span>
+            </label>
+      
+            <label for="vehicle-name">
+              <span class="label-title">Modelo do veículo</span>
+              <select name="modelo_veiculo" id="vehicle-name">
+                <option></option>
+              </select>
+              <span class="error-message" data-fieldname="modelo_veiculo"></span>
+            </label>
+      
+            <label for="vehicle-value">
+              <span class="label-title">Valor do veículo</span>
+              <input type="text" name="valor_veiculo" id="vehicle-value" autocomplete="off" data-mask-type="currency">
+              <span class="error-message" data-fieldname="valor_veiculo"></span>
+            </label>
+      
+            <label for="entry-value">
+              <span class="label-title">Valor da entrada</span>
+              <input type="text" name="valor_entrada" id="entry-value" autocomplete="off" data-mask-type="currency">
+              <span class="error-message" data-fieldname="valor_entrada"></span>
+            </label>
+      
+            <button type="button" class="prev-button">Anterior</button>
+            <button type="submit" class="submit-button">Enviar</button>
+          </fieldset>
+        </div>
+      </form>    </div>
+  </div>
+<script type="text/javascript" src="assets/js/bundle.js"></script></body>
+
+</html>

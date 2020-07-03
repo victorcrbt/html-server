@@ -1,0 +1,251 @@
+<!doctype html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>B2Mult - Dashboard</title>
+<link href="assets/styles/main-styles.css" rel="stylesheet"></head>
+
+<body>
+  <div id="root" class="admin-main">
+    <header id="dashboard-header">
+      <nav id="dashboard-nav">
+        <ul>
+          <li class="menu-btn" data-load-table="recommendations">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 550.795 550.795"><path d="M501.613 491.782c12.381 0 23.109-4.088 32.229-12.16L377.793 323.567a2878.213 2878.213 0 00-10.801 7.767c-11.678 8.604-21.156 15.318-28.434 20.129-7.277 4.822-16.959 9.737-29.045 14.755-12.094 5.024-23.361 7.528-33.813 7.528h-.612c-10.453 0-21.72-2.503-33.813-7.528-12.093-5.018-21.775-9.933-29.045-14.755-7.277-4.811-16.75-11.524-28.434-20.129a1351.934 1351.934 0 00-10.771-7.809L16.946 479.622c9.119 8.072 19.854 12.16 32.234 12.16h452.433zM31.047 225.299C19.37 217.514 9.015 208.598 0 198.555V435.98l137.541-137.541c-27.516-19.21-62.969-43.562-106.494-73.14zm489.012 0c-41.865 28.336-77.447 52.73-106.75 73.195l137.486 137.492V198.555c-8.815 9.841-19.059 18.751-30.736 26.744z"/><path d="M501.613 59.013H49.181c-15.784 0-27.919 5.33-36.42 15.979C4.253 85.646.006 98.97.006 114.949c0 12.907 5.636 26.892 16.903 41.959 11.267 15.061 23.256 26.891 35.961 35.496 6.965 4.921 27.969 19.523 63.012 43.801a20367.497 20367.497 0 0149.505 34.395 8855.122 8855.122 0 0131.022 21.701c.985.691 2.534 1.799 4.59 3.269 2.215 1.591 5.018 3.61 8.476 6.107 6.659 4.816 12.191 8.709 16.597 11.683 4.4 2.975 9.731 6.298 15.985 9.988 6.249 3.685 12.143 6.456 17.675 8.299 5.533 1.842 10.655 2.766 15.367 2.766h.612c4.711 0 9.834-.924 15.368-2.766 5.531-1.843 11.42-4.608 17.674-8.299 6.248-3.69 11.572-7.02 15.986-9.988 4.406-2.974 9.938-6.866 16.598-11.683 3.451-2.497 6.254-4.517 8.469-6.102a643.575 643.575 0 014.596-3.274c6.684-4.651 17.1-11.892 31.104-21.616 25.482-17.705 63.01-43.764 112.742-78.281 14.957-10.447 27.453-23.054 37.496-37.803 10.025-14.749 15.051-30.22 15.051-46.408 0-13.525-4.873-25.098-14.598-34.737-9.736-9.627-21.265-14.443-34.584-14.443z"/></svg>
+          </li>
+          <li class="menu-btn" data-load-table="car-insurance">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 39.055 39.054"><path d="M38.831 14.26a1.005 1.005 0 00-.775-.369h-3.801c-.938-2.474-2.16-4.898-3.549-5.813-4.805-3.161-17.55-3.161-22.355 0-1.39.916-2.607 3.343-3.55 5.813H1a.997.997 0 00-.775.369.995.995 0 00-.204.834l.563 2.728a1 1 0 00.979.797h1.126c-1.087 1.254-1.614 2.833-1.621 4.413-.007 1.952.734 3.716 2.089 4.964.015.013.03.022.044.035v3.817c0 .827.672 1.5 1.5 1.5h3.506c.828 0 1.5-.673 1.5-1.5v-1.534h19.641v1.534c0 .827.672 1.5 1.5 1.5h3.506c.826 0 1.5-.673 1.5-1.5v-3.742c1.438-1.317 2.125-3.129 2.134-4.938.006-1.634-.545-3.271-1.696-4.551h1.201a.996.996 0 00.979-.798l.564-2.727a1.008 1.008 0 00-.205-.832zM9.998 10.583c3.83-2.521 15.229-2.521 19.057 0 .744.488 1.701 2.461 2.578 4.877H7.422c.875-2.415 1.832-4.387 2.576-4.877zM5.512 23.408a2.95 2.95 0 115.901.001 2.95 2.95 0 01-5.901-.001zm25.119 2.951a2.951 2.951 0 110-5.903 2.951 2.951 0 010 5.903z"/></svg>
+          </li>
+          <li class="menu-btn" data-load-table="house-insurance">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 460.298 460.297"><path d="M230.149 120.939L65.986 256.274c0 .191-.048.472-.144.855-.094.38-.144.656-.144.852v137.041c0 4.948 1.809 9.236 5.426 12.847 3.616 3.613 7.898 5.431 12.847 5.431h109.63V303.664h73.097v109.64h109.629c4.948 0 9.236-1.814 12.847-5.435 3.617-3.607 5.432-7.898 5.432-12.847V257.981c0-.76-.104-1.334-.288-1.707L230.149 120.939z"/><path d="M457.122 225.438L394.6 173.476V56.989c0-2.663-.856-4.853-2.574-6.567-1.704-1.712-3.894-2.568-6.563-2.568h-54.816c-2.666 0-4.855.856-6.57 2.568-1.711 1.714-2.566 3.905-2.566 6.567v55.673l-69.662-58.245c-6.084-4.949-13.318-7.423-21.694-7.423-8.375 0-15.608 2.474-21.698 7.423L3.172 225.438c-1.903 1.52-2.946 3.566-3.14 6.136-.193 2.568.472 4.811 1.997 6.713l17.701 21.128c1.525 1.712 3.521 2.759 5.996 3.142 2.285.192 4.57-.476 6.855-1.998L230.149 95.817l197.57 164.741c1.526 1.328 3.521 1.991 5.996 1.991h.858c2.471-.376 4.463-1.43 5.996-3.138l17.703-21.125c1.522-1.906 2.189-4.145 1.991-6.716-.195-2.563-1.242-4.609-3.141-6.132z"/></svg>
+          </li>
+          <li class="menu-btn" data-load-table="bike-insurance">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 64 64"><path d="M49 26a12.933 12.933 0 00-4.246.726L40.525 17H46.5a1.5 1.5 0 010 3H44v2h2.5a3.5 3.5 0 000-7H39a1 1 0 00-.917 1.4l2 4.6h-16.72l-.972-3.054-1.907.608.861 2.7a.992.992 0 00-.229.277l-2.938 5.55a13 13 0 107.364 15.287l.5.094a2.989 2.989 0 002.409 2.482l1.1 3.288a1 1 0 00.925.684l3.5.083.046-2-2.8-.066-.775-2.324a2.978 2.978 0 001.018-4.309l10.617-14.7.836 1.924A12.987 12.987 0 1049 26zM13 49a10 10 0 113.769-19.257l-4.653 8.789a1 1 0 00.7 1.45l9.775 1.833A10.013 10.013 0 0113 49zm9.957-9.15l-8.437-1.582 4.017-7.588A9.995 9.995 0 0123 39c0 .287-.019.569-.043.85zm3.46.648l-.5-.093a12.926 12.926 0 00-5.98-12.378l2.223-4.2 5.032 15.793a2.99 2.99 0 00-.775.88zm3.42-1.365a2.96 2.96 0 00-.739-.123L24 23h16.953l.2.463zM49 49a9.994 9.994 0 01-4.881-18.719l3.964 9.119 1.834-.8-3.966-9.123A10 10 0 1149 49zM17.414 13a1.414 1.414 0 00-1 2.414l.57.57a3.469 3.469 0 003.55.838l4.671-1.557a1.162 1.162 0 00.8-1.1A1.162 1.162 0 0024.838 13z"/></svg>
+          </li>
+          <li class="menu-btn" data-load-table="financing">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 47.001 47.001"><path d="M44.845 42.718H2.136a2.136 2.136 0 100 4.272h42.708a2.135 2.135 0 10.001-4.272zm-40.04-5.553a2.136 2.136 0 100 4.273h37.37a2.136 2.136 0 000-4.273h-.533v-19.22h.533a1.066 1.066 0 100-2.134H4.805a1.067 1.067 0 100 2.134h.534v19.219h-.534zm32.565-19.22v19.219h-6.406V17.945h6.406zm-10.678 0v19.219h-6.406V17.945h6.406zm-17.083 0h6.406v19.219H9.609V17.945zm-7.473-4.054h42.729a2.135 2.135 0 00.693-4.157L24.368.199a2.14 2.14 0 00-1.752 0L1.26 9.808a2.135 2.135 0 00.876 4.083z"/></svg>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="dashboard-content">
+      <div id="recommendations" class="dashboard-panel" data-simplebar>
+        <a href="http://186.209.116.117:8989/export/form_indicacao" class="download-btn">
+          Baixar planilha
+        </a>
+      
+        <div class="table-wrapper">
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <td data-dbcolumn-name="nome">Nome</td>
+                <td data-dbcolumn-name="telefone">Telefone</td>
+                <td data-dbcolumn-name="email">E-mail</td>
+                <td data-dbcolumn-name="notification_mark">Notificações</td>
+                <td data-dbcolumn-name="nome_indicado">Nome do indicado</td>
+                <td data-dbcolumn-name="telefone_indicado">Telefone do indicado</td>
+                <td data-dbcolumn-name="email_indicado">E-mail do indicado</td>
+                <td data-dbcolumn-name="tipo_seguro_indicado">Tipo de seguro</td>
+              </tr>
+            </thead>
+      
+            <tbody>
+      
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="controls">
+          <button class="prevPage">Anterior</button>
+          <button class="nextPage">Próxima</button>
+        </div>
+      </div>      <div id="car-insurance" class="dashboard-panel">
+        <a href="http://186.209.116.117:8989/export/form_seguro_automovel" class="download-btn">
+          Baixar planilha
+        </a>
+      
+        <div class="table-wrapper">
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <td data-dbcolumn-name="nome">Nome</td>
+                <td data-dbcolumn-name="telefone">Telefone</td>
+                <td data-dbcolumn-name="email">E-mail</td>
+                <td data-dbcolumn-name="endereco">Endereço</td>
+                <td data-dbcolumn-name="data_nasc">Data de Nascimento</td>
+                <td data-dbcolumn-name="documento">Documento</td>
+                <td data-dbcolumn-name="notification_mark">Notificações</td>
+                <td data-dbcolumn-name="seguro_novo">Seguro novo?</td>
+                <td data-dbcolumn-name="seguradora_atual">Seguradora Atual</td>
+                <td data-dbcolumn-name="data_venc">Data de Vencimento</td>
+                <td data-dbcolumn-name="numero_apolice">Número da Apólice</td>
+                <td data-dbcolumn-name="classe_bonus">Classe Bônus</td>
+                <td data-dbcolumn-name="houve_sinistro">Sinistro</td>
+                <td data-dbcolumn-name="marca_veiculo">Marca do Veículo</td>
+                <td data-dbcolumn-name="versao_modelo">Nome do Veículo</td>
+                <td data-dbcolumn-name="ano_fabricacao">Ano de Fabricação</td>
+                <td data-dbcolumn-name="ano_modelo">Ano do Modelo</td>
+                <td data-dbcolumn-name="possui_veiculo">Possui Veículo</td>
+                <td data-dbcolumn-name="placa_veiculo">Placa do Veículo</td>
+                <td data-dbcolumn-name="equipado_alarme">Possui Alarme</td>
+                <td data-dbcolumn-name="eh_proprietario_veiculo">Proprietário do Veículo</td>
+                <td data-dbcolumn-name="infos_adicionais">Informações Adicionais</td>
+                <td data-dbcolumn-name="cep_pernoite">CEP Pernoite</td>
+                <td data-dbcolumn-name="onde_estacionado_noite">Local de Estacionamento</td>
+                <td data-dbcolumn-name="utilizacao_veiculo">Uso do Veículo</td>
+                <td data-dbcolumn-name="km_dia">KM Diária</td>
+                <td data-dbcolumn-name="eh_principal_condutor">Condutor Principal</td>
+                <td data-dbcolumn-name="nome_condutor_principal">Nome Condutor Principal</td>
+                <td data-dbcolumn-name="documento_condutor_principal">Doc. Condutor Principal</td>
+                <td data-dbcolumn-name="nome_condutor_sec_1">Nome Condutor Adicional</td>
+                <td data-dbcolumn-name="documento_condutor_sec_1">Doc. Conditor Adicional</td>
+                <td data-dbcolumn-name="mora_c_jovens">Mora com Jovens</td>
+                <td data-dbcolumn-name="qntos_jovens">Quantidade de Jovens</td>
+                <td data-dbcolumn-name="sexo_jovem_1">Sexo dos Jovens</td>
+                <td data-dbcolumn-name="seguro_proprio_nome">Seguro no próprio nome?</td>
+              </tr>
+            </thead>
+      
+            <tbody>
+      
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="controls">
+          <button class="prevPage">Anterior</button>
+          <button class="nextPage">Próxima</button>
+        </div>
+      </div>      <div id="house-insurance" class="dashboard-panel">
+        <a href="http://186.209.116.117:8989/export/form_seguro_residencial" class="download-btn">
+          Baixar planilha
+        </a>
+      
+      
+        <div class="table-wrapper">
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <td data-dbcolumn-name="nome">Nome</td>
+                <td data-dbcolumn-name="telefone">Telefone</td>
+                <td data-dbcolumn-name="email">E-mail</td>
+                <td data-dbcolumn-name="endereco">Endereço</td>
+                <td data-dbcolumn-name="data_nasc">Data de Nascimento</td>
+                <td data-dbcolumn-name="documento">Documento</td>
+                <td data-dbcolumn-name="notification_mark">Notificações</td>
+                <td data-dbcolumn-name="seguro_novo">Seguro novo?</td>
+                <td data-dbcolumn-name="seguradora_atual">Seguradora Atual</td>
+                <td data-dbcolumn-name="data_venc">Data de Vencimento</td>
+                <td data-dbcolumn-name="numero_apolice">Número da Apólice</td>
+                <td data-dbcolumn-name="classe_bonus">Classe Bônus</td>
+                <td data-dbcolumn-name="houve_sinistro">Sinistro</td>
+                <td data-dbcolumn-name="ind_valor_de_novo">Indenização com valor de novo</td>
+                <td data-dbcolumn-name="sistema_contra_roubo">Sistema contra roubo</td>
+                <td data-dbcolumn-name="zona_rural">Zona Rural</td>
+                <td data-dbcolumn-name="tipo_imovel">Tipo de Imóvel</td>
+                <td data-dbcolumn-name="endereco_imovel">Endereço do Imóvel</td>
+                <td data-dbcolumn-name="tipo_ocupacao">Tipo de Ocupação</td>
+              </tr>
+            </thead>
+      
+            <tbody>
+      
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="controls">
+          <button class="prevPage">Anterior</button>
+          <button class="nextPage">Próxima</button>
+        </div>
+      </div>      <div id="bike-insurance" class="dashboard-panel">
+        <a href="http://186.209.116.117:8989/export/form_seguro_bike" class="download-btn">
+          Baixar planilha
+        </a>
+      
+        <div class="table-wrapper">
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <td data-dbcolumn-name="nome">Nome</td>
+                <td data-dbcolumn-name="telefone">Telefone</td>
+                <td data-dbcolumn-name="email">E-mail</td>
+                <td data-dbcolumn-name="endereco">Endereço</td>
+                <td data-dbcolumn-name="data_nasc">Data de Nascimento</td>
+                <td data-dbcolumn-name="documento">Documento</td>
+                <td data-dbcolumn-name="notification_mark">Notificações</td>
+                <td data-dbcolumn-name="seguro_novo">Seguro novo?</td>
+                <td data-dbcolumn-name="seguradora_atual">Seguradora Atual</td>
+                <td data-dbcolumn-name="data_venc">Data de Vencimento</td>
+                <td data-dbcolumn-name="numero_apolice">Número da Apólice</td>
+                <td data-dbcolumn-name="classe_bonus">Classe Bônus</td>
+                <td data-dbcolumn-name="houve_sinistro">Sinistro</td>
+                <td data-dbcolumn-name="tipo_equipamento">Tipo de Equipamento</td>
+                <td data-dbcolumn-name="marca_equipamento">Marca do Equipamento</td>
+                <td data-dbcolumn-name="data_aquisicao">Data de Aquisição</td>
+                <td data-dbcolumn-name="valor_aquisicao">Valor de Aquisição</td>
+                <td data-dbcolumn-name="valor_cob_danos">Valor Cob. Danos a Bike</td>
+                <td data-dbcolumn-name="valor_cob_subtracao">Valor Cob. Subtração</td>
+                <td data-dbcolumn-name="valor_cob_danos_eletricos">Valor Cob. Danos Elétricos</td>
+                <td data-dbcolumn-name="valor_cob_bike_garagem">Valor Cob. Bike Bagagem</td>
+                <td data-dbcolumn-name="valor_cob_garantia_internacional">Valor Cob. Garantia Internacional</td>
+                <td data-dbcolumn-name="valor_cob_resp_civil">Valor Cob. Responsabilidade Civil</td>
+                <td data-dbcolumn-name="valor_cob_acidentes_pessoais_individuais">Valor Cob. Acidentes Pessoais</td>
+                <td data-dbcolumn-name="utilizacao_bike">Utilização da Bike</td>
+                <td data-dbcolumn-name="tipo_bike">Tipo de Bike</td>
+                <td data-dbcolumn-name="destinada_locacao">Destinada a locação</td>
+              </tr>
+            </thead>
+      
+            <tbody>
+      
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="controls">
+          <button class="prevPage">Anterior</button>
+          <button class="nextPage">Próxima</button>
+        </div>
+      </div>      <div id="financing" class="dashboard-panel">
+        <a href="http://186.209.116.117:8989/export/form_financeira" class="download-btn">
+          Baixar planilha
+        </a>
+      
+        <div class="table-wrapper">
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <td data-dbcolumn-name="nome">Nome</td>
+                <td data-dbcolumn-name="telefone">Telefone</td>
+                <td data-dbcolumn-name="email">E-mail</td>
+                <td data-dbcolumn-name="endereco">Endereço</td>
+                <td data-dbcolumn-name="data_nasc">Data de Nascimento</td>
+                <td data-dbcolumn-name="documento">Documento</td>
+                <td data-dbcolumn-name="notification_mark">Notificações</td>
+                <td data-dbcolumn-name="marca_veiculo">Marca do Veículo</td>
+                <td data-dbcolumn-name="modelo_veiculo">Modelo do Veículo</td>
+                <td data-dbcolumn-name="valor_veiculo">Valor do Veículo</td>
+                <td data-dbcolumn-name="valor_entrada">Valor de Entrada</td>
+              </tr>
+            </thead>
+      
+            <tbody>
+      
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="controls">
+          <button class="prevPage">Anterior</button>
+          <button class="nextPage">Próxima</button>
+        </div>
+      </div>    </div>
+  </div>
+<script type="text/javascript" src="assets/js/bundle.js"></script></body>
+
+</html>

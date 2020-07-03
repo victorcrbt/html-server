@@ -1,0 +1,444 @@
+<!doctype html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>B2Mult - Seguro Automotivo</title>
+<link href="assets/styles/main-styles.css" rel="stylesheet"></head>
+
+<body>
+  <div id="root">
+    <div class="form-content">
+      <form id="car-insurance-form" class="multistep-form">
+        <div class="fieldset-wrapper">
+          <!-- Pessoais -->
+          <fieldset>
+            <h1 class="section-title">Informações pessoais</h1>
+      
+            <label for="name">
+              <span class="label-title">Nome</span>
+              <input type="text" name="nome" id="name" autocomplete="off" autofocus="on">
+              <span class="error-message" data-fieldname="nome"></span>
+            </label>
+      
+            <label for="phone">
+              <span class="label-title">Telefone</span>
+              <input type="text" name="telefone" id="phone" autocomplete="off" data-mask-type="phone">
+              <span class="error-message" data-fieldname="telefone"></span>
+            </label>
+      
+            <label for="email">
+              <span class="label-title">E-mail</span>
+              <input type="email" name="email" id="email" autocomplete="off">
+              <span class="error-message" data-fieldname="email"></span>
+            </label>
+      
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <fieldset>
+            <label for="address">
+              <span class="label-title">Endereço</span>
+              <input type="text" name="endereco" id="address" autocomplete="off">
+              <span class="error-message" data-fieldname="endereco"></span>
+            </label>
+      
+            <label for="birth-date">
+              <span class="label-title">Data de nascimento</span>
+              <input type="date" name="data_nasc" placeholder="date" id="birth-date" autocomplete="off" data-mask-type="date">
+              <span class="error-message" data-fieldname="data_nasc"></span>
+            </label>
+      
+            <label for="document">
+              <span class="label-title">CPF/CNPJ</span>
+              <input type="text" name="documento" id="document" autocomplete="off" data-mask-type="document">
+              <span class="error-message" data-fieldname="documento"></span>
+            </label>
+      
+      
+            <label for="notification-check">
+              <div class="inline-input">
+                <input type="checkbox" name="notification_mark" id="notification-check" value="true">
+                <span class="label-title">Receber ofertas e notificações?</span>
+              </div>
+            </label>
+      
+            <button type="button" class="prev-button">Anterior</button>
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <!-- Seguro -->
+          <fieldset>
+            <h1 class="section-title">Informações do seguro</h1>
+      
+            <div class="new-insurance">
+              <span class="label-title">Seguro novo?</span>
+              <div class="inline-input">
+                <label for="new-insurance-true" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="seguro_novo" id="new-insurance-true" value="true"
+                      data-conditional-controller="true" checked> Sim
+                  </div>
+                </label>
+                <label for="new-insurance-false" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="seguro_novo" id="new-insurance-false" value="false"
+                      data-conditional-controller="true"> Não
+                  </div>
+                </label>
+              </div>
+              <span class="error-message" data-fieldname="seguro_novo"></span>
+            </div>
+      
+            <!-- Habilitados apenas se o campo acima for marcado "sim" -->
+            <label class="hidden-field" for="current-insuer" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <span class="label-title">Seguradora atual</span>
+              <input type="text" name="seguradora_atual" id="current-insuer" autocomplete="off">
+              <span class="error-message" data-fieldname="seguradora_atual"></span>
+            </label>
+      
+            <label class="hidden-field" for="expiration-date" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <span class="label-title">Data de vencimento</span>
+              <input type="date" name="data_venc" id="expiration-date" autocomplete="off" data-mask-type="date">
+              <span class="error-message" data-fieldname="data_venc"></span>
+            </label>
+      
+            <label class="hidden-field" for="policy_number" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <span class="label-title">Número da apólice</span>
+              <input type="text" name="numero_apolice" id="policy_number" autocomplete="off">
+              <span class="error-message" data-fieldname="numero_apolice"></span>
+            </label>
+      
+            <label class="hidden-field" for="bonus-class" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <span class="label-title">Classe de bonus</span>
+              <select name="classe_bonus" id="bonus-class">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <span class="error-message" data-fieldname="classe_bonus"></span>
+            </label>
+      
+            <label class="hidden-field" for="automotive-claim" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <div class="inline-input">
+                <input type="checkbox" name="houve_sinistro" id="automotive-claim" value="true">
+                <span class="label-title">Houve sinistro?</span>
+              </div>
+            </label>
+      
+            <button type="button" class="prev-button">Anterior</button>
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <!-- Veículo -->
+          <fieldset>
+            <h1 class="section-title">Informações do veículo</h1>
+      
+            <label for="vehicle-brand">
+              <span class="label-title">Marca do veículo</span>
+              <select name="marca_veiculo" id="vehicle-brand">
+                <option></option>
+              </select>
+              <span class="error-message" data-fieldname="marca_veiculo"></span>
+            </label>
+      
+            <label for="model-version">
+              <span class="label-title">Versão do modelo</span>
+              <select name="versao_modelo" id="model-version">
+                <option></option>
+              </select>
+              <span class="error-message" data-fieldname="versao_modelo"></span>
+            </label>
+      
+            <label for="year-of-manufacture">
+              <span class="label-title">Ano de fabricação</span>
+              <select name="ano_fabricacao" id="year-of-manufacture">
+                <option></option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+              </select>
+              <span class="error-message" data-fieldname="ano_fabricacao"></span>
+            </label>
+      
+            <label for="model-year">
+              <span class="label-title">Ano do modelo</span>
+              <select name="ano_modelo" id="model-year">
+                <option></option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+              </select>
+              <span class="error-message" data-fieldname="ano_modelo"></span>
+            </label>
+      
+            <div class="own-vehicle">
+              <span class="label-title">Já possui veículo?</span>
+              <div class="inline-input">
+                <label for="own-vehicle-true" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="possui_veiculo" id="own-vehicle-true" value="true"
+                      data-conditional-controller="true"> Sim
+                  </div>
+                </label>
+                <label for="own-vehicle-false" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="possui_veiculo" id="own-vehicle-false" value="false"
+                      data-conditional-controller="true" checked> Não
+                  </div>
+                </label>
+              </div>
+              <span class="error-message" data-fieldname="possui_veiculo"></span>
+            </div>
+      
+            <!-- Habilitado se a informação anterior for SIM -->
+            <label for="vehicle-plate" class="hidden-field" data-conditional-relationship="possui_veiculo"
+              data-conditional-value="true">
+              <span class="label-title">Placa de veículo</span>
+              <input type="text" name="placa_veiculo" id="vehicle-plate" autocomplete="off">
+              <span class="error-message" data-fieldname="placa_veiculo"></span>
+            </label>
+      
+            <!-- Habilitado se o cliente possuir carro -->
+            <div class="hidden-field" data-conditional-relationship="possui_veiculo" style="flex-direction: column;"
+              data-conditional-value="true">
+              <span class="label-title">Equipado com alarme?</span>
+              <div class="inline-input">
+                <label for="have-alarm-true" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="equipado_alarme" id="have-alarm-true" value="true"> Sim
+                  </div>
+                </label>
+                <label for="have-alarm-false" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="equipado_alarme" id="have-alarm-false" value="false" checked> Não
+                  </div>
+                </label>
+              </div>
+              <span class="error-message" data-fieldname="equipado_alarme"></span>
+            </div>
+      
+            <div class="hidden-field" data-conditional-relationship="possui_veiculo" style="flex-direction: column;"
+              data-conditional-value="true">
+              <span class="label-title">Você é proprietário do veículo?</span>
+              <div class="inline-input">
+                <label for="vehicle-owner-true" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="eh_proprietario_veiculo" id="vehicle-owner-true" value="true" checked> Sim
+                  </div>
+                </label>
+                <label for="vehicle-owner-false" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="eh_proprietario_veiculo" id="vehicle-owner-false" value="false"> Não
+                  </div>
+                </label>
+              </div>
+              <span class="error-message" data-fieldname="eh_proprietario_veiculo"></span>
+            </div>
+      
+            <button type="button" class="prev-button">Anterior</button>
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <!-- Informações adicionais -->
+          <fieldset>
+            <h1 class="section-title">Informações do adicionais</h1>
+      
+            <label for="aditional-info">
+              <span class="label-title">Informações adicionais</span>
+              <select name="infos_adicionais" id="aditional-info">
+                <option></option>
+                <option value="Alienado">Alienado</option>
+                <option value="Isenção fiscal">Isenção fiscal</option>
+                <option value="Blindado">Blindado</option>
+                <option value="Kit gás">Kit gás</option>
+                <option value="Chassi remarcado">Chassi remarcado</option>
+              </select>
+              <span class="error-message" data-fieldname="infos_adicionais"></span>
+            </label>
+      
+            <label for="overnight-zip-code">
+              <span class="label-title">CEP de pernoite do veículo</span>
+              <input type="text" name="cep_pernoite" id="overnight-zip-code" autocomplete="off" data-mask-type="zip-code">
+              <span class="error-message" data-fieldname="cep_pernoite"></span>
+            </label>
+      
+            <label for="parking_spot">
+              <span class="label-title">Onde fica estacionado a noite?</span>
+              <select name="onde_estacionado_noite" id="parking_spot">
+                <option></option>
+                <option value="Rua">Rua</option>
+                <option value="Garagem fechada">Garagem fechada</option>
+                <option value="Estacionamento">Estacionamento</option>
+              </select>
+              <span class="error-message" data-fieldname="onde_estacionado_noite"></span>
+            </label>
+      
+            <label for="vehicle-use">
+              <span class="label-title">Uso do veículo</span>
+              <input type="text" name="utilizacao_veiculo" id="vehicle-use" autocomplete="off"
+                placeholder="Lazer, atividade comercial, trabalho...">
+              <span class="error-message" data-fieldname="utilizacao_veiculo"></span>
+            </label>
+      
+            <label for="daily-mileage">
+              <span class="label-title">Quilometragem diária</span>
+              <input type="text" name="km_dia" id="daily-mileage" autocomplete="off">
+              <span class="error-message" data-fieldname="km_dia"></span>
+            </label>
+      
+            <button type="button" class="prev-button">Anterior</button>
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <!-- Informações do condutor -->
+          <fieldset>
+            <h1 class="section-title">Informações do condutor</h1>
+      
+            <div class="main-conductor">
+              <span class="label-title">Será o condutor principal?</span>
+              <div class="inline-input">
+                <label for="main-conductor-true" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="eh_principal_condutor" id="main-conductor-true" value="true"
+                      data-conditional-controller="true" checked> Sim
+                  </div>
+                </label>
+                <label for="main-conductor-false" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="eh_principal_condutor" id="main-conductor-false" value="false"
+                      data-conditional-controller="true"> Não
+                  </div>
+                </label>
+              </div>
+              <span class="error-message" data-fieldname="eh_principal_condutor"></span>
+            </div>
+      
+            <!-- Campos a seguir aparecem se a opção anterior for NÃO -->
+            <label for="conductor-name" class="hidden-field" data-conditional-relationship="eh_principal_condutor"
+              data-conditional-value="false">
+              <span class="label-title">Nome do condutor</span>
+              <input type="text" name="nome_condutor_principal" id="conductor-name" autocomplete="off">
+              <span class="error-message" data-fieldname="nome_condutor_principal"></span>
+            </label>
+      
+            <label for="conductor-document" class="hidden-field" data-conditional-relationship="eh_principal_condutor"
+              data-conditional-value="false">
+              <span class="label-title">CPF do condutor</span>
+              <input type="text" name="documento_condutor_principal" id="conductor-document" autocomplete="off"
+                data-mask-type="cpf">
+              <span class="error-message" data-fieldname="documento_condutor_principal"></span>
+            </label>
+      
+            <div class="aditional-condutor">
+              <span class="label-title">Quer adicionar outro condutor?</span>
+              <div class="inline-input">
+                <label for="aditional-condutor-true" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="condutor_adicional" id="aditional-condutor-true" value="true"
+                      data-conditional-controller="true" data-remove-from-data="true"> Sim
+                  </div>
+                </label>
+                <label for="aditional-condutor-false" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" data-remove-from-data="true" name="condutor_adicional" id="aditional-condutor-false"
+                      value="false" data-conditional-controller="true" checked> Não
+                  </div>
+                </label>
+              </div>
+              <span class="error-message" data-fieldname="condutor_adicional"></span>
+            </div>
+      
+            <!-- Campos a seguir aparecem se a opção anterior for SIM -->
+      
+            <label for="aditional-conductor-name" class="hidden-field" data-conditional-relationship="condutor_adicional"
+              data-conditional-value="true">
+              <span class="label-title">Nome do condutor adicional</span>
+              <input type="text" name="nome_condutor_sec_1" id="aditional-conductor-name" autocomplete="off">
+              <span class="error-message" data-fieldname="nome_condutor_sec_1"></span>
+            </label>
+      
+            <label for="aditional-conductor-document" class="hidden-field" data-conditional-relationship="condutor_adicional"
+              data-conditional-value="true">
+              <span class="label-title">CPF do condutor adicional</span>
+              <input type="text" name="documento_condutor_sec_1" id="aditional-conductor-document" autocomplete="off"
+                data-mask-type="cpf">
+              <span class="error-message" data-fieldname="documento_condutor_sec_1"></span>
+            </label>
+      
+            <div class="age-range-people">
+              <span class="label-title">Moram junto pessoas de 17 a 25 anos?</span>
+              <div class="inline-input">
+                <label for="age-range-people-true" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="mora_c_jovens" id="age-range-people-true" value="true"
+                      data-conditional-controller="true"> Sim
+                  </div>
+                </label>
+                <label for="age-range-people-false" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="mora_c_jovens" id="age-range-people-false" value="false"
+                      data-conditional-controller="true" checked>
+                    Não
+                  </div>
+                </label>
+              </div>
+              <span class="error-message" data-fieldname="mora_c_jovens"></span>
+            </div>
+      
+            <!-- Campos a seguir aparecem se a opção anterior for NÃO -->
+      
+            <label for="danger-age-people-number" class="hidden-field" data-conditional-relationship="mora_c_jovens">
+              <span class="label-title">Quantas pessoas de 17 a 25 anos moram junto?</span>
+              <input type="text" name="qntos_jovens" id="danger-age-people-number" autocomplete="off">
+              <span class="error-message" data-fieldname="qntos_jovens"></span>
+            </label>
+      
+            <div class="age-range-people-gender hidden-field" data-conditional-relationship="mora_c_jovens">
+              <span class="label-title">Qual o sexo dos moradores?</span>
+              <div class="inline-input">
+                <label for="age-range-people-gender-male" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="sexo_jovem_1" id="age-range-people-gender-male" value="male">
+                    M
+                  </div>
+                </label>
+                <label for="age-range-people-gender-female" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="sexo_jovem_1" id="age-range-people-gender-female" value="female">
+                    F
+                  </div>
+                </label>
+                <label for="age-range-people-gender-both" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="sexo_jovem_1" id="age-range-people-gender-both" value="both"> Ambos
+                  </div>
+                </label>
+              </div>
+              <span class="error-message" data-fieldname="sexo_jovem_1"></span>
+            </div>
+      
+            <button type="button" class="prev-button">Voltar</button>
+            <button type="submit" class="submit-button">Enviar</button>
+          </fieldset>
+        </div>
+      </form>    </div>
+  </div>
+<script type="text/javascript" src="assets/js/bundle.js"></script></body>
+
+</html>

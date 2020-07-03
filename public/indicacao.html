@@ -1,0 +1,89 @@
+<!doctype html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>B2Mult - Indicação</title>
+<link href="assets/styles/main-styles.css" rel="stylesheet"></head>
+
+<body>
+  <div id="root">
+    <div class="form-content">
+      <form id="recommendation-form" class="multistep-form">
+        <div class="fieldset-wrapper">
+          <!-- Pessoais -->
+          <fieldset>
+            <h1 class="section-title">Seus dados</h1>
+      
+            <label for="name">
+              <span class="label-title">Nome</span>
+              <input type="text" name="nome" id="name" autocomplete="off" autofocus="on">
+              <span class="error-message" data-fieldname="nome"></span>
+            </label>
+      
+            <label for="phone">
+              <span class="label-title">Telefone</span>
+              <input type="text" name="telefone" id="phone" autocomplete="off" data-mask-type="phone">
+              <span class="error-message" data-fieldname="telefone"></span>
+            </label>
+      
+            <label for="email">
+              <span class="label-title">E-mail</span>
+              <input type="email" name="email" id="email" autocomplete="off">
+              <span class="error-message" data-fieldname="email"></span>
+            </label>
+      
+            <label for="notification-check">
+              <div class="inline-input">
+                <input type="checkbox" name="notification_mark" id="notification-check" value="true">
+                <span class="label-title">Receber ofertas e notificações?</span>
+              </div>
+            </label>
+      
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <!-- Indicado -->
+          <fieldset>
+            <h1 class="section-title">Dados do indicado</h1>
+      
+            <label for="recommended-name">
+              <span class="label-title">Nome</span>
+              <input type="text" name="nome_indicado" id="recommended-name" autocomplete="off" autofocus="on">
+              <span class="error-message" data-fieldname="nome_indicado"></span>
+            </label>
+      
+            <label for="recommended-phone">
+              <span class="label-title">Telefone</span>
+              <input type="text" name="telefone_indicado" id="recommended-phone" autocomplete="off" data-mask-type="phone">
+              <span class="error-message" data-fieldname="telefone_indicado"></span>
+            </label>
+      
+            <label for="recommended-email">
+              <span class="label-title">E-mail</span>
+              <input type="email" name="email_indicado" id="recommended-email" autocomplete="off">
+              <span class="error-message" data-fieldname="email_indicado"></span>
+            </label>
+      
+            <label for="insurance-type">
+              <span class="label-title">Tipo de seguro</span>
+              <select name="tipo_seguro_indicado" id="insurance-type">
+                <option value="Automotivo">Automotivo</option>
+                <option value="Residencial">Residencial</option>
+                <option value="Bike">Bike</option>
+              </select>
+              <span class="error-message" data-fieldname="tipo_seguro_indicado"></span>
+            </label>
+      
+            <button type="button" class="prev-button">Anterior</button>
+            <button type="submit" class="submit-button">Enviar</button>
+          </fieldset>
+        </div>
+      </form>    </div>
+  </div>
+<script type="text/javascript" src="assets/js/bundle.js"></script></body>
+
+</html>

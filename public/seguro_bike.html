@@ -1,0 +1,299 @@
+<!doctype html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>B2Mult - Seguro Bike</title>
+<link href="assets/styles/main-styles.css" rel="stylesheet"></head>
+
+<body>
+  <div id="root">
+    <div class="form-content">
+      <form id="bike-insurance-form" class="multistep-form">
+        <div class="fieldset-wrapper">
+          <!-- Pessoais -->
+          <fieldset>
+            <h1 class="section-title">Informações pessoais</h1>
+      
+            <label for="name">
+              <span class="label-title">Nome</span>
+              <input type="text" name="nome" id="name" autocomplete="off" autofocus="on">
+              <span class="error-message" data-fieldname="nome"></span>
+            </label>
+      
+            <label for="phone">
+              <span class="label-title">Telefone</span>
+              <input type="text" name="telefone" id="phone" autocomplete="off" data-mask-type="phone">
+              <span class="error-message" data-fieldname="telefone"></span>
+            </label>
+      
+            <label for="email">
+              <span class="label-title">E-mail</span>
+              <input type="email" name="email" id="email" autocomplete="off">
+              <span class="error-message" data-fieldname="email"></span>
+            </label>
+      
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <!-- Pessoais continuação -->
+          <fieldset>
+            <label for="address">
+              <span class="label-title">Endereço</span>
+              <input type="text" name="endereco" id="address" autocomplete="off">
+              <span class="error-message" data-fieldname="endereco"></span>
+            </label>
+      
+            <label for="birth-date">
+              <span class="label-title">Data de nascimento</span>
+              <input type="date" name="data_nasc" id="birth-date" autocomplete="off" data-mask-type="date">
+              <span class="error-message" data-fieldname="data_nasc"></span>
+            </label>
+      
+            <label for="document">
+              <span class="label-title">CPF/CNPJ</span>
+              <input type="text" name="documento" id="document" autocomplete="off" data-mask-type="document">
+              <span class="error-message" data-fieldname="documento"></span>
+            </label>
+      
+      
+            <label for="notification-check">
+              <div class="inline-input">
+                <input type="checkbox" name="notification_mark" id="notification-check" value="true">
+                <span class="label-title">Receber ofertas e notificações?</span>
+              </div>
+            </label>
+      
+            <button type="button" class="prev-button">Anterior</button>
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <!-- Seguro -->
+          <fieldset>
+            <h1 class="section-title">Informações do seguro</h1>
+      
+            <div class="new-insurance">
+              <span class="label-title">Seguro novo?</span>
+              <div class="inline-input">
+                <label for="new-insurance-true" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="seguro_novo" id="new-insurance-true" value="true"
+                      data-conditional-controller="true" checked> Sim
+                  </div>
+                </label>
+                <label for="new-insurance-false" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="seguro_novo" id="new-insurance-false" value="false"
+                      data-conditional-controller="true"> Não
+                  </div>
+                </label>
+              </div>
+              <span class="error-message" data-fieldname="seguro_novo"></span>
+            </div>
+      
+            <!-- Habilitados apenas se o campo acima for marcado "sim" -->
+            <label class="hidden-field" for="current-insuer" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <span class="label-title">Seguradora atual</span>
+              <input type="text" name="seguradora_atual" id="current-insuer" autocomplete="off">
+              <span class="error-message" data-fieldname="seguradora_atual"></span>
+            </label>
+      
+            <label class="hidden-field" for="expiration-date" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <span class="label-title">Data de vencimento</span>
+              <input type="date" name="data_venc" id="expiration-date" autocomplete="off" data-mask-type="date">
+              <span class="error-message" data-fieldname="data_venc"></span>
+            </label>
+      
+            <label class="hidden-field" for="policy_number" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <span class="label-title">Número da apólice</span>
+              <input type="text" name="numero_apolice" id="policy_number" autocomplete="off">
+              <span class="error-message" data-fieldname="numero_apolice"></span>
+            </label>
+      
+            <label class="hidden-field" for="bonus-class" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <span class="label-title">Classe de bonus</span>
+              <select name="classe_bonus" id="bonus-class">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <span class="error-message" data-fieldname="classe_bonus"></span>
+            </label>
+      
+            <label class="hidden-field" for="bike-claim" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <div class="inline-input">
+                <input type="checkbox" name="houve_sinistro" id="bike-claim" value="true">
+                <span class="label-title">Houve sinistro?</span>
+              </div>
+            </label>
+      
+            <button type="button" class="prev-button">Anterior</button>
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <!-- Equipamento -->
+          <fieldset>
+            <h1 class="section-title">Equipamento</h1>
+      
+            <label for="equipment-type">
+              <span class="label-title">Tipo de equipamento</span>
+              <select name="tipo_equipamento" id="equipment-type">
+                <option value="Velocimetro Dígital">Velocimetro Dígital</option>
+                <option value="Bike">Bike</option>
+                <option value="GPS">GPS</option>
+              </select>
+              <span class="error-message" data-fieldname="tipo_equipamento"></span>
+            </label>
+      
+            <label for="equipment-brand">
+              <span class="label-title">Marca do equipamento</span>
+              <select name="marca_equipamento" id="equipment-brand">
+                <option value="marca">Marca</option>
+                <option value="marca 2">Marca 2</option>
+                <option value="marca 3">Marca 3</option>
+              </select>
+              <span class="error-message" data-fieldname="marca_equipamento"></span>
+            </label>
+      
+            <label for="acquisition-date">
+              <span class="label-title">Data de aquisição</span>
+              <input type="date" name="data_aquisicao" id="acquisition-date" autocomplete="off">
+              <span class="error-message" data-fieldname="data_aquisicao"></span>
+            </label>
+      
+            <label for="acquisition-value">
+              <span class="label-title">Valor da aquisição</span>
+              <input type="text" name="valor_aquisicao" id="acquisition-value" autocomplete="off" data-mask-type="currency">
+              <span class="error-message" data-fieldname="valor_aquisicao"></span>
+            </label>
+      
+            <button type="button" class="prev-button">Anterior</button>
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <!-- Valores -->
+          <fieldset>
+            <h1 class="section-title">Valores</h1>
+      
+            <label for="bike-damage-coverage-value">
+              <span class="label-title">Cobertura de danos a bike</span>
+              <input type="text" name="valor_cob_danos" id="bike-damage-coverage-value" autocomplete="off"
+                data-mask-type="currency">
+              <span class="error-message" data-fieldname="valor_cob_danos"></span>
+            </label>
+      
+            <label for="subtraction-coverage-value">
+              <span class="label-title">Cobertura de subtração</span>
+              <input type="text" name="valor_cob_subtracao" id="subtraction-coverage-value" autocomplete="off"
+                data-mask-type="currency">
+              <span class="error-message" data-fieldname="valor_cob_subtracao"></span>
+            </label>
+      
+            <label for="electrical-damage-coverage-value">
+              <span class="label-title">Cobertura de danos elétricos</span>
+              <input type="text" name="valor_cob_danos_eletricos" id="electrical-damage-coverage-value" autocomplete="off"
+                data-mask-type="currency">
+              <span class="error-message" data-fieldname="valor_cob_danos_eletricos"></span>
+            </label>
+      
+            <label for="bike-luggage-coverage-value">
+              <span class="label-title">Cobertura de Bike Bagagem</span>
+              <input type="text" name="valor_cob_bike_garagem" id="bike-luggage-coverage-value" autocomplete="off"
+                data-mask-type="currency">
+              <span class="error-message" data-fieldname="valor_cob_bike_garagem"></span>
+            </label>
+      
+            <label for="international-warranty-coverage-value">
+              <span class="label-title">Cobertura de Garantia Internacional</span>
+              <input type="text" name="valor_cob_garantia_internacional" id="international-warranty-coverage-value"
+                autocomplete="off" data-mask-type="currency">
+              <span class="error-message" data-fieldname="valor_cob_garantia_internacional"></span>
+            </label>
+      
+            <label for="liability-coverage-value">
+              <span class="label-title">Cobertura de Responsabilidade Civil</span>
+              <input type="text" name="valor_cob_resp_civil" id="liability-coverage-value" autocomplete="off"
+                data-mask-type="currency">
+              <span class="error-message" data-fieldname="valor_cob_resp_civil"></span>
+            </label>
+      
+            <label for="ipa-coverage-value">
+              <span class="label-title">Cobertura de acidentes pessoais individuais</span>
+              <input type="text" name="valor_cob_acidentes_pessoais_individuais" id="ipa-coverage-value" autocomplete="off"
+                data-mask-type="currency">
+              <span class="error-message" data-fieldname="valor_cob_acidentes_pessoais_individuais"></span>
+            </label>
+      
+            <button type="button" class="prev-button">Anterior</button>
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <!-- Utilização -->
+          <fieldset>
+            <h1 class="section-title">Informações do condutor</h1>
+      
+            <label for="bike-usage">
+              <span class="label-title">Utilização da bike</span>
+              <select name="utilizacao_bike" id="bike-usage">
+                <option value="Competicao">Competicao</option>
+                <option value="Lazer">Lazer</option>
+                <option value="Meio de transporte">Meio de transporte</option>
+              </select>
+              <span class="error-message" data-fieldname="utilizacao_bike"></span>
+            </label>
+      
+            <label for="bike-type">
+              <span class="label-title">Tipo de bike</span>
+              <select name="tipo_bike" id="bike-type">
+                <option value="Tipo 1">Tipo 1</option>
+                <option value="Tipo 2">Tipo 2</option>
+                <option value="Tipo 3">Tipo 3</option>
+              </select>
+              <span class="error-message" data-fieldname="tipo_bike"></span>
+            </label>
+      
+            <div class="location">
+              <span class="label-title">Bike destinada a locação?</span>
+              <div class="inline-input">
+                <label for="location-true" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="destinada_locacao" id="location-true" value="true"
+                      data-conditional-controller="true">
+                    Sim
+                  </div>
+                </label>
+                <label for="location-false" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="destinada_locacao" id="location-false" value="false"
+                      data-conditional-controller="true" checked>
+                    Não
+                  </div>
+                </label>
+              </div>
+              <span class="error-message" data-fieldname="destinada_locacao"></span>
+            </div>
+      
+            <button type="button" class="prev-button">Voltar</button>
+            <button type="submit" class="submit-button">Enviar</button>
+          </fieldset>
+        </div>
+      </form>    </div>
+  </div>
+<script type="text/javascript" src="assets/js/bundle.js"></script></body>
+
+</html>

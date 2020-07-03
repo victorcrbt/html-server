@@ -1,0 +1,244 @@
+<!doctype html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>B2Mult - Seguro Residencial</title>
+<link href="assets/styles/main-styles.css" rel="stylesheet"></head>
+
+<body>
+  <div id="root">
+    <div class="form-content">
+      <form id="house-insurance-form" class="multistep-form">
+        <div class="fieldset-wrapper">
+          <!-- Pessoais -->
+          <fieldset>
+            <h1 class="section-title">Informações pessoais</h1>
+      
+            <label for="name">
+              <span class="label-title">Nome</span>
+              <input type="text" name="nome" id="name" autocomplete="off" autofocus="on">
+              <span class="error-message" data-fieldname="nome"></span>
+            </label>
+      
+            <label for="phone">
+              <span class="label-title">Telefone</span>
+              <input type="text" name="telefone" id="phone" autocomplete="off" data-mask-type="phone">
+              <span class="error-message" data-fieldname="telefone"></span>
+            </label>
+      
+            <label for="email">
+              <span class="label-title">E-mail</span>
+              <input type="email" name="email" id="email" autocomplete="off">
+              <span class="error-message" data-fieldname="email"></span>
+            </label>
+      
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <!-- Pessoais continuação -->
+          <fieldset>
+            <h1 class="section-title">Informações pessoais</h1>
+      
+            <label for="address">
+              <span class="label-title">Endereço</span>
+              <input type="text" name="endereco" id="address" autocomplete="off" autofocus="on">
+              <span class="error-message" data-fieldname="endereco"></span>
+            </label>
+      
+            <label for="birth-date">
+              <span class="label-title">Data de nascimento</span>
+              <input type="date" name="data_nasc" id="birth-date" autocomplete="off" data-mask-type="date">
+              <span class="error-message" data-fieldname="data_nasc"></span>
+            </label>
+      
+            <label for="document">
+              <span class="label-title">CPF/CNPJ</span>
+              <input type="text" name="documento" id="document" autocomplete="off" data-mask-type="document">
+              <span class="error-message" data-fieldname="documento"></span>
+            </label>
+      
+      
+            <label for="notification-check">
+              <div class="inline-input">
+                <input type="checkbox" name="notification_mark" id="notification-check" value="true">
+                <span class="label-title">Receber ofertas e notificações?</span>
+              </div>
+            </label>
+      
+            <button type="button" class="prev-button">Anterior</button>
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <!-- Seguro -->
+          <fieldset>
+            <h1 class="section-title">Informações do seguro</h1>
+      
+            <div class="new-insurance">
+              <span class="label-title">Seguro novo?</span>
+              <div class="inline-input">
+                <label for="new-insurance-true" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="seguro_novo" id="new-insurance-true" value="true"
+                      data-conditional-controller="true" checked> Sim
+                  </div>
+                </label>
+                <label for="new-insurance-false" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="seguro_novo" id="new-insurance-false" value="false"
+                      data-conditional-controller="true"> Não
+                  </div>
+                </label>
+              </div>
+              <span class="error-message" data-fieldname="seguro_novo"></span>
+            </div>
+      
+            <!-- Habilitados apenas se o campo acima for marcado "sim" -->
+            <label class="hidden-field" for="current-insuer" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <span class="label-title">Seguradora atual</span>
+              <input type="text" name="seguradora_atual" id="current-insuer" autocomplete="off">
+              <span class="error-message" data-fieldname="seguradora_atual"></span>
+            </label>
+      
+            <label class="hidden-field" for="expiration-date" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <span class="label-title">Data de vencimento</span>
+              <input type="date" name="data_venc" id="expiration-date" autocomplete="off" data-mask-type="date">
+              <span class="error-message" data-fieldname="data_venc"></span>
+            </label>
+      
+            <label class="hidden-field" for="policy_number" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <span class="label-title">Número da apólice</span>
+              <input type="text" name="numero_apolice" id="policy_number" autocomplete="off">
+              <span class="error-message" data-fieldname="numero_apolice"></span>
+            </label>
+      
+            <label class="hidden-field" for="bonus-class" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <span class="label-title">Classe de bonus</span>
+              <select name="classe_bonus" id="bonus-class">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <span class="error-message" data-fieldname="classe_bonus"></span>
+            </label>
+      
+            <label class="hidden-field" for="residential-claim" data-conditional-relationship="seguro_novo"
+              data-conditional-value="false">
+              <div class="inline-input">
+                <input type="checkbox" name="houve_sinistro" id="residential-claim" value="true">
+                <span class="label-title">Houve sinistro?</span>
+              </div>
+            </label>
+      
+            <button type="button" class="prev-button">Anterior</button>
+            <button type="button" class="next-button">Próximo</button>
+          </fieldset>
+      
+          <!-- Informações do imóvel  -->
+          <fieldset>
+            <h1 class="section-title">Informações do imóvel</h1>
+      
+            <div class="full-value-indenization">
+              <span class="label-title">Deseja indenização com valor de novo?</span>
+              <div class="inline-input">
+                <label for="full-value-indenization-true" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="ind_valor_de_novo" id="full-value-indenization-true" value="true"
+                      data-conditional-controller="true" checked> Sim
+                  </div>
+                </label>
+                <label for="full-value-indenization-false" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="ind_valor_de_novo" id="full-value-indenization-false" value="false"
+                      data-conditional-controller="true"> Não
+                  </div>
+                </label>
+              </div>
+              <span class="error-message" data-fieldname="ind_valor_de_novo"></span>
+            </div>
+      
+            <div class="anti-theft-system">
+              <span class="label-title">Possui sistema contra roubo?</span>
+              <div class="inline-input">
+                <label for="anti-theft-system-true" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="sistema_contra_roubo" id="anti-theft-system-true" value="true"
+                      data-conditional-controller="true" checked> Sim
+                  </div>
+                </label>
+                <label for="anti-theft-system-false" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="sistema_contra_roubo" id="anti-theft-system-false" value="false"
+                      data-conditional-controller="true"> Não
+                  </div>
+                </label>
+              </div>
+              <span class="error-message" data-fieldname="sistema_contra_roubo"></span>
+            </div>
+      
+            <div class="countryside">
+              <span class="label-title">O imóvel está localizado em zona rural?</span>
+              <div class="inline-input">
+                <label for="countryside-true" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="zona_rural" id="countryside-true" value="true"
+                      data-conditional-controller="true"> Sim
+                  </div>
+                </label>
+                <label for="countryside-false" class="radio-option">
+                  <div class="inline-input">
+                    <input type="radio" name="zona_rural" id="countryside-false" value="false"
+                      data-conditional-controller="true" checked> Não
+                  </div>
+                </label>
+              </div>
+              <span class="error-message" data-fieldname="zona_rural"></span>
+            </div>
+      
+            <label for="property-type">
+              <span class="label-title">Tipo de imóvel</span>
+              <select name="tipo_imovel" id="property-type">
+                <option value="casa">Casa</option>
+                <option value="apartamento">Apartamento</option>
+              </select>
+              <span class="error-message" data-fieldname="tipo_imovel"></span>
+            </label>
+      
+            <label for="property_address">
+              <span class="label-title">Endereço do imóvel</span>
+              <input type="text" name="endereco_imovel" id="property_address" autocomplete="off">
+              <span class="error-message" data-fieldname="endereco_imovel"></span>
+            </label>
+      
+            <label for="occupation-type">
+              <span class="label-title">Tipo de ocupação</span>
+              <select name="tipo_ocupacao" id="occupation-type">
+                <option value="habitual">Habitual</option>
+                <option value="veraneio">Veraneio</option>
+              </select>
+              <span class="error-message" data-fieldname="tipo_ocupacao"></span>
+            </label>
+      
+            <button type="button" class="prev-button">Voltar</button>
+            <button type="submit" class="submit-button">Enviar</button>
+          </fieldset>
+        </div>
+      </form>    </div>
+  </div>
+<script type="text/javascript" src="assets/js/bundle.js"></script></body>
+
+</html>
