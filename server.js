@@ -28,4 +28,4 @@ server.get('/:file?', (req, res) => {
   return res.sendFile(`${publicFolder}/${fileToServe}.html`);
 });
 
-server.listen(5000);
+server.listen(process.env.PORT || 5000);
